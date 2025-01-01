@@ -47,7 +47,7 @@ class UserController {
             const emailExists = await User.findOne({email})
 
             if(emailExists) {
-                return res.status(400).json({error: 'Email já cadastrado no sistema'})
+                return res.status(400).json({message: 'Email já cadastrado no sistema'})
             }
 
             const hashedPassword = await bcrypt.hash(password, 10)

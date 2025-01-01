@@ -10,6 +10,9 @@ const PostSchema = mongoose.Schema({
   description: {
     type: String,
   },
+  content: {
+    type: String,
+  },
   createdAt: {
     type: Date
   },

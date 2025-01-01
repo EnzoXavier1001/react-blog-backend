@@ -27,7 +27,7 @@ class PostController {
 
     async create(req, res) {
         try {
-            const { title, description, cover } = req.body 
+            const { title, description, content, cover } = req.body 
             const post = await Post.create({ title, description, cover, createdAt: new Date()})
             return res.status(201).json(post)
         } catch (error) {
@@ -38,7 +38,7 @@ class PostController {
     async update(req, res) {
         const { id } = req.params
         try {
-            const { title, description, cover } = req.body 
+            const { title, description, content, cover } = req.body 
 
             const post = await Post.findOneAndUpdate({_id: id}, {
                 title,
