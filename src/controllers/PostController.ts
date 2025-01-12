@@ -28,7 +28,7 @@ class PostController {
     async create(req, res) {
         try {
             const { title, description, content, cover } = req.body 
-            const post = await Post.create({ title, description, cover, createdAt: new Date()})
+            const post = await Post.create({ title, description, cover, content, createdAt: new Date()})
             return res.status(201).json(post)
         } catch (error) {
             console.error(error)
